@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 gem 'dashing-rails'
-#gem 'puma'
+gem 'puma'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 
