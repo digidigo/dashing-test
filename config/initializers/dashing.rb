@@ -5,7 +5,12 @@ Dashing.configure do |config|
 
   # Redis credentials.
   # See https://devcenter.heroku.com/articles/redistogo to configure redis for heroku.
-  config.redis_host     = 'rediscache.embomd.0001.use1.cache.amazonaws.com'
+  if(Rails.env.production?)
+    config.redis_host     = 'rediscache.embomd.0001.use1.cache.amazonaws.com'
+  else 
+    config.redis_host     = '127.0.0.1'
+  end
+  
   config.redis_port     = '6379'
   # config.redis_password = nil
 
