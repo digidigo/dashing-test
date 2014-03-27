@@ -4,6 +4,7 @@ class LiveController < ApplicationController
   def feed
     response.headers['Content-Type']      = 'text/event-stream'
     response.headers['X-Accel-Buffering'] = 'no'
+    response.headers["'Transfer-Encoding'"] = "chunked"
     i = 0
     while i < 5 do 
       response.stream.write "id: 0\n"
