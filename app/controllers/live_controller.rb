@@ -2,7 +2,8 @@ class LiveController < ApplicationController
   include ActionController::Live
   respond_to :html
   def feed
-    response.headers['Content-Type']      = 'text/plain'
+    response.headers['Content-Type']      = 'text/event-stream'
+    response.headers['X-Accel-Buffering'] = 'no'
     i = 0
     while i < 5 do 
       response.stream.write "id: 0\n"
